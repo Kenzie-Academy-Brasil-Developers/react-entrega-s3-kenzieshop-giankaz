@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 export const LoginMain = styled.main`
 width: 90%;
-margin: 150px auto;
+margin: 0 auto;
 display: flex;
 justify-content: center;
 align-items: center;
 max-width: 500px;
 padding: 10px;
+height: 87vh;
 form {
     width: 100%;
     display: flex;
@@ -42,5 +43,13 @@ button {
 }
 button:hover {
     background-color: var(--darkGreen);
+}
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h2>span {
+    color: var(--darkGreen)
 }
 `

@@ -7,6 +7,7 @@ html, body, .App {
     font-family: 'Rubik', sans-serif;
     background-color: var(--grey);
 
+
 }
 
 button {
@@ -112,4 +113,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+
  `

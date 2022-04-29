@@ -4,6 +4,7 @@ export const MainStyle = styled.main`
 width: 80%;
 margin: 120px auto;
 
+
 ul {
     display: flex;
     flex-flow: row wrap;
@@ -100,6 +101,7 @@ button:hover {
 @media (max-width: 900px) {
     &{
         width: 100%;
+      
     }
 
 }

@@ -14,15 +14,20 @@ top: 0;
     align-self: flex-start;
     min-width: 200px;
     max-width: 400px;
-  
+    cursor: pointer;
 
 }
 
-
+h1 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  
+}
 
 ul {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
     width: 56%;

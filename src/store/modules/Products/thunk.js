@@ -1,5 +1,5 @@
 import { addTotal, delTotal } from "../Total/actions"
-import { addProduct, changeProduct, delProduct, filterAll, filterBrinquedos, filterRacoes, filterRemedios, filterService } from "./actions"
+import { addProduct, changeProduct, clearProduct, delProduct, filterAll, filterBrinquedos, filterRacoes, filterRemedios, filterService } from "./actions"
 import { dataBase } from "../../../database"
 
 
@@ -54,4 +54,8 @@ export const filterProductThunk = (type) => (dispatch, getStore) => {
     }
         
     
+}
+
+export const clearProductThunk = () => (dispatch) => {
+    dispatch(clearProduct())
 }

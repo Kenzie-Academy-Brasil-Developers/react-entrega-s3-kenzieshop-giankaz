@@ -1,0 +1,1 @@
+export const changeLogin = (bool)=> ({type: "CHANGE_LOGIN", bool})
