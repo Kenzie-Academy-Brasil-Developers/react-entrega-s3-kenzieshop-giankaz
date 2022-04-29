@@ -39,7 +39,7 @@ export default function Product({setError}) {
                      <div>
                      <h3>{name}</h3>
                      <p>R$: {price},00 à vista</p>
-                     <button onClick={() => handleAdd(value)}>Adcionar ao Carrinho<BsFillCartPlusFill/></button>
+                     <button onClick={() => handleAdd(value)}>Adicionar ao Carrinho<BsFillCartPlusFill/></button>
                      </div>
 
                  </li>
