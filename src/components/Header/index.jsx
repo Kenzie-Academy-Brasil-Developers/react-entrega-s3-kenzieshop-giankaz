@@ -20,9 +20,9 @@ export default function Header() {
 
 
     const handleRemove =(product) => {
-    console.log(`🤖 ~ handleRemove ~ product`, product)
+        const itemTotal = product.price * product.un
         dispatch(delProductThunk(product.id))
-        dispatch(delTotal(product.price))
+        dispatch(delTotal(itemTotal))
     }
 
     const handleTotal = (value, quantity) => {
@@ -48,7 +48,7 @@ export default function Header() {
                                     <span>Valor: {`R$${value.price.toFixed(2)}`}</span>
                                     <div>
                                     <p>Unidades: </p>
-                                    <input type="number" min='1' max='10' value={value.un} onChange={(e) => handleTotal(value, e.target.value)}/>
+                                    <input type="number" min='1' max='20' value={value.un} onChange={(e) => handleTotal(value, e.target.value)}/>
                                     </div>
                                     </div>
                                 <button onClick={() => handleRemove(value)}><FaTrash/></button>

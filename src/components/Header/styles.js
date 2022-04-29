@@ -135,10 +135,11 @@ a:hover {
     align-items: center;
     position: relative;
     padding: 5px;
+    gap: 5px
 }
 .cartPreview>ul>li>button {
     position: absolute;
-    top: 0;
+    top: 8px;
     right: 0;
     border: none;
     background-color: white;

@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { dataBase } from '../../database'
 import {BsFillCartPlusFill} from 'react-icons/bs'
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { addProductThunk } from "../../store/modules/Products/thunk";
 import { addTotal } from '../../store/modules/Total/actions';
 
-export default function Product() {
+export default function Product({setError}) {
     const dispatch = useDispatch()
+    const products = useSelector((state) => state.products)
 
     const handleAdd = (product) => {
-        dispatch(addProductThunk(product))
-        dispatch(addTotal(product.price))
+        let result = true
+        products.forEach((value) => {
+            if (value.id === product.id) {
+                result = false
+            }
+        })
+
+        if (!result) {
+            setError(true)
+        } else {
+            setError(false)
+            dispatch(addProductThunk(product))
+            dispatch(addTotal(product.price))
+        }
     }
 
   return (
+      
       <ul>
           {dataBase.map((value) => {
              const {url, name, price, type, id} = value
@@ -30,7 +44,10 @@ export default function Product() {
 
                  </li>
              )
-         })}
+            })}
+         
+
       </ul>
+      
   )
 }
