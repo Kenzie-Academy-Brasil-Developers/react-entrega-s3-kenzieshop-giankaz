@@ -6,13 +6,14 @@ export default createGlobalStyle`
 html, body, .App {
     font-family: 'Rubik', sans-serif;
     background-color: var(--grey);
-    
+
 }
- 
+
 button {
     cursor: pointer;
     
 }
+
 
 
 :root {
@@ -25,8 +26,31 @@ button {
 
 
 
+footer {
+	position: fixed;
+	bottom: 0;
+}
 
 
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--green) #ffffff;
+  }
+
+ 
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--darkGreen);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 10px;
+    border: 0 solid #ffffff;
+  }
 
 
 

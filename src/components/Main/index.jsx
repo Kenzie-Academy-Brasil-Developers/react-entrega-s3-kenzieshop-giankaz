@@ -3,6 +3,8 @@ import {MainStyle} from './styles'
 import Product from '../Product'
 import {useSnackbar} from 'notistack'
 
+
+
 export default function Main() {
   const [error, setError] = useState(false)
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -15,7 +17,7 @@ export default function Main() {
 
   return (
     <>
-    <MainStyle >
+    <MainStyle>
         <Product setError={setError}/>
     </MainStyle>
     </>

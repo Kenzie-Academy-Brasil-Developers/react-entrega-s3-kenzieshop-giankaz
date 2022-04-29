@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const MainStyle = styled.main`
 width: 80%;
 margin: 120px auto;
@@ -22,7 +21,7 @@ ul>li {
     max-width: 350px;
     background-color: var(--green);
     height: 50vh;
-    min-height: 300px;
+    min-height: 350px;
     display: flex;
     flex-flow: column nowrap;
 padding: 10px;
@@ -30,6 +29,7 @@ padding: 10px;
     justify-content: space-between;
     border-radius: 4px;
    box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.41);
+   border: 1px solid var(--brown)
     
 }
 
@@ -45,6 +45,8 @@ ul>li>figure {
     width: 100%;
     min-height: 70%;
     border-radius: 8px;
+   border: 1px solid var(--brown)
+
    
 }
 ul>li>div>p {
@@ -52,7 +54,7 @@ ul>li>div>p {
     align-self: flex-end;
     text-align: end;
     color: var(--brown);
-    background-color: white;
+    text-decoration: underline;
     border-radius: 4px;
     
 }
@@ -86,6 +88,8 @@ ul>li>div>button {
     justify-content: center;
     align-items: center;
     gap: 5px;
+   border: 1px solid var(--brown)
+
 
 }
 button:hover {

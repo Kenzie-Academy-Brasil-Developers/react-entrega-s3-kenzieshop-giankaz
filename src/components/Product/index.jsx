@@ -8,6 +8,7 @@ import { addTotal } from '../../store/modules/Total/actions';
 export default function Product({setError}) {
     const dispatch = useDispatch()
     const products = useSelector((state) => state.products)
+    const filteredProducts = useSelector((state) => state.filteredProducts)
 
     const handleAdd = (product) => {
         let result = true
@@ -22,14 +23,13 @@ export default function Product({setError}) {
         } else {
             setError(false)
             dispatch(addProductThunk(product))
-            dispatch(addTotal(product.price))
         }
     }
 
   return (
       
       <ul>
-          {dataBase.map((value) => {
+          {filteredProducts.map((value) => {
              const {url, name, price, type, id} = value
              return (
                  <li key={id}>

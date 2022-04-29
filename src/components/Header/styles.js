@@ -35,6 +35,7 @@ ul>li {
 }
 
 .nav>li:hover {
+    cursor: pointer;
     color: white;
 }
 
@@ -54,11 +55,17 @@ a{
     text-align: center;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: var(--brown);
+    cursor: pointer;
 }
 
 a:hover {
-    cursor: pointer;
     color: white;
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
 }
 .cart {
     position: relative;
@@ -76,14 +83,14 @@ a:hover {
     top: -10px;
     right: -10px;
     background-color: red;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    padding-right: 3px;
-    padding-top: 3px;
+    padding-right: 1px;
+    padding-top: 2px;
     font-weight: bold;
     color: white;
 
@@ -91,10 +98,9 @@ a:hover {
 
 
 .cartPreview {
-    
     position: absolute;
-    bottom: -390px;
-    left: -260px;
+    bottom: -400px;
+    left: -270px;
     width: 300px;
     height: 380px;
     background-color: var(--darkGreen);
@@ -108,8 +114,6 @@ a:hover {
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black;
-
-    /* display: none; */
 }
 
 
@@ -135,7 +139,9 @@ a:hover {
     align-items: center;
     position: relative;
     padding: 5px;
-    gap: 5px
+    gap: 5px;
+    border:1px solid var(--brown);
+
 }
 .cartPreview>ul>li>button {
     position: absolute;
@@ -144,6 +150,10 @@ a:hover {
     border: none;
     background-color: white;
     
+    
+}
+.cartPreview>ul>li>button:hover {
+    color: red;
 }
 .cartImg {
     width: 50px;
@@ -214,28 +224,7 @@ a:hover {
 
 }
 
-  .cartPreview>ul {
-    scrollbar-width: auto;
-    scrollbar-color: var(--green) #ffffff;
-  }
-
- 
-  .cartPreview>ul::-webkit-scrollbar {
-    width: 7px;
-  }
-
-  .cartPreview>ul::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .cartPreview>ul::-webkit-scrollbar-thumb {
-    background-color: var(--green);
-    border-radius: 10px;
-    border: 0 solid #ffffff;
-  }
-
-
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
       & {
           flex-flow: row wrap;
           justify-content: space-around;

@@ -1,3 +1,10 @@
 export const ADD_PRODUCT = '@cart/ADD'
 export const DEL_PRODUCT = '@cart/DEL'
 export const CHANGE_PRODUCT = '@cart/CHANGE'
+export const CLEAR_PRODUCT = '@cart/CLEAR'
+
+export const FILTER_SERVICE = '@filters/SERVICE'
+export const FILTER_RACOES = '@filters/RACOES'
+export const FILTER_REMEDIOS = '@filters/REMEDIOS'
+export const FILTER_BRINQUEDOS = '@filters/BRINQUEDOS'
+export const FILTER_ALL = '@filters/ALL'
