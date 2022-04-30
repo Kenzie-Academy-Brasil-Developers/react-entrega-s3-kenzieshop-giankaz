@@ -231,6 +231,27 @@ a:visited {
 
 }
 
+.cartPreview>ul {
+    scrollbar-width: auto;
+    scrollbar-color: var(--brown) #ffffff;
+  }
+
+ 
+  .cartPreview>ul::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .cartPreview>ul::-webkit-scrollbar-track {
+    background: var(--darkGreen);
+  }
+
+  .cartPreview>ul::-webkit-scrollbar-thumb {
+    background-color: var(--brown);
+    border-radius: 10px;
+    border: 0 solid #ffffff;
+  }
+
+
   @media (max-width: 1000px) {
       & {
           flex-flow: row wrap;

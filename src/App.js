@@ -7,18 +7,12 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
-
-
-
       return (
         <div className="App">
           <GlobalStyle/>
-          <Header/>
-            <Routes/>
-            <Footer/>
+            <Routes/>   
         </div>
       );
-
 }
 
 export default App;

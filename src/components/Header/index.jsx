@@ -22,13 +22,13 @@ import { useHistory } from "react-router-dom";
 import { addUser } from "../../store/modules/User/action";
 import { useSnackbar } from "notistack";
 import { clearProduct } from "../../store/modules/Products/actions";
-import { changeLogin } from "../../store/modules/Login/action";
+import { changeHeader, changeLogin } from "../../store/modules/Login/action";
 
 export default function Header() {
 	const [open, setOpen] = useState(false);
 	const [itemsCart, setItemsCart] = useState(1);
 	const { enqueueSnackbar } = useSnackbar();
-	const { total, products, user, login } = useSelector((state) => state);
+	const { total, products, user, login, headerInfo } = useSelector((state) => state);
 	const history = useHistory();
 	const dispatch = useDispatch();
 
@@ -58,16 +58,21 @@ export default function Header() {
 		enqueueSnackbar(`Logout realizado! Até mais ${user.name}`, {
 			variant: "success",
 		});
-        dispatch(changeLogin(true))
+        dispatch(changeHeader(true))
+		dispatch(changeLogin(false))
 	};
 
 	const handleCompra = () => {
 		if (user !== 1) {
 			if (products.length > 0) {
-				enqueueSnackbar(`Compra realizada com sucesso! Obrigado ${user.name}`, {
+				enqueueSnackbar(`Redirecionando para pagamentos, aguarde.`, {
 					variant: "success",
 				});
-				dispatch(clearProductThunk());
+				setTimeout(() => {
+					setOpen(false)
+					history.push('/payment')
+				},1500)
+				//dispatch(clearProductThunk());
 			} else {
 				enqueueSnackbar(`Adicione algum item para prosseguir!`, {
 					variant: "error",
@@ -78,7 +83,8 @@ export default function Header() {
 				variant: "error",
 			});
 			setTimeout(() => {
-                dispatch(changeLogin(false))
+				setOpen(false)
+                dispatch(changeHeader(false))
                 history.push("/login")
             }, 2000);
 		}
@@ -90,7 +96,7 @@ export default function Header() {
 				alt="PetStore: Rações - Remédios - Serviços"
 				className="banner"
 				onClick={() => {
-					dispatch(changeLogin(true))
+					dispatch(changeHeader(true))
 					history.push("/");
 				}}
 			/>
@@ -131,7 +137,7 @@ export default function Header() {
 														<h3>{value.name}</h3>
 														<div>
 															<span>
-																Valor: {`R$${value.price.toFixed(2)}`}
+																Valor: {`R$${(value.price * value.un).toFixed(2)}`}
 															</span>
 															<div>
 																<p>Unidades: </p>
@@ -179,14 +185,14 @@ export default function Header() {
 						LogOut
 					</Link>
 				) : (
-					<Link to="/login" onClick={() => dispatch(changeLogin(false))}>
+					<Link to="/login" onClick={() => dispatch(changeHeader(false))}>
 						<CgLogIn size={30} />
 						Login
 					</Link>
 				)}
 			</section>
 			<ul className="nav">
-				{login ? (
+				{headerInfo === true ? (
 					<>
 						<li onClick={() => handleFilter("all")}>Todos</li>
 						<li onClick={() => handleFilter("servicos")}>Serviços</li>
@@ -195,7 +201,7 @@ export default function Header() {
 						<li onClick={() => handleFilter("brinquedos")}>Brinquedos</li>
 					</>
 				) : (
-					<h1>Faça seu Login para continuar</h1>
+					(headerInfo === 1 ? <h1>Realize seu Cadastro</h1>  :  <h1>Realize seu Login para continuar</h1>)
 				)}
 			</ul>
 		</HeaderStyle>

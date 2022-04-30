@@ -1,8 +1,9 @@
 import { useSnackbar } from 'notistack';
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import { changeLogin } from '../../store/modules/Login/action';
+import { changeHeader, changeLogin } from '../../store/modules/Login/action';
 import { addUser } from '../../store/modules/User/action';
 import { LoginMain } from './style'
 
@@ -11,10 +12,10 @@ export default function Login() {
         name: '',
         pass: '',
     })
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
     const history = useHistory()
     const dispatch = useDispatch()
-    const {login} = useSelector(state => state)
+
 
  
 
@@ -24,6 +25,7 @@ export default function Login() {
             dispatch(addUser(values))
             enqueueSnackbar(`Login Realizado! Bem vindo ${values.name}`, {variant: 'success'});
             setTimeout(() => {
+                dispatch(changeHeader(true))
                 dispatch(changeLogin(true))
                 history.push('/')
             },1500)
@@ -43,6 +45,8 @@ export default function Login() {
              <input type="password" name="" id="" placeholder='Senha'  value={values.pass} onChange={(event) => setValue({...values, pass: event.target.value})}/>
              <button type='submit'>Entrar</button>
          </form>
+
+            <Link to="/register">Cadastre-se</Link>
     </LoginMain>
   )
 }

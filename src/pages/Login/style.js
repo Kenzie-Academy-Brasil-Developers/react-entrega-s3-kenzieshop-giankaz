@@ -4,6 +4,8 @@ export const LoginMain = styled.main`
 width: 90%;
 margin: 0 auto;
 display: flex;
+flex-flow: column nowrap;
+gap: 25px;
 justify-content: center;
 align-items: center;
 max-width: 500px;
@@ -34,7 +36,7 @@ input:focus {
 }
 
 button {
-    border: none;
+    border: 1px solid var(--brown);
     width: 50%;
     padding: 10px;
     background-color: var(--green);
@@ -52,4 +54,19 @@ h2 {
 h2>span {
     color: var(--darkGreen)
 }
+a {
+        text-decoration: none;
+        color: black;
+        font-size: smaller;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        background-color: white;
+        width: 50%;
+        padding: 10px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid var(--brown)
+    }
+
+  
 `

@@ -3,9 +3,11 @@ import styled from 'styled-components'
 export const FooterStyled = styled.footer`
 width: 100%;
 background-color: var(--green);
-position: relative;
+position: fixed;
 min-height: 10vh;
 border-top: 1px solid var(--brown);
+bottom: 0;
+z-index: -1;
 
 ul {
     width: 100%;
