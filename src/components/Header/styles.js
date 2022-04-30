@@ -8,6 +8,7 @@ background-color: var(--green);
 color: var(--brown);
 position: fixed;
 top: 0;
+border-bottom: 1px solid var(--brown);
 
 .banner {
     width: 20%;
@@ -156,6 +157,7 @@ a:visited {
     background-color: white;
     
     
+    
 }
 .cartPreview>ul>li>button:hover {
     color: red;
@@ -175,12 +177,12 @@ a:visited {
 }
 .cartPreview>ul>li>div>span {
     font-size: 10px;
-    font-weight: normal;
+    font-weight: bold;
     width: 40px;
 }
 .cartPreview>ul>li>div>div>p {
     font-size: 10px;
-    font-weight: normal;
+    font-weight: bold;
 }
 .cartPreview>ul>li>div>div>input {
     width: 35px;
@@ -193,8 +195,8 @@ a:visited {
     padding: 10px 15.5px 0 10px;
 }
 .total>button {
-    width: 50%;
-    border: none;
+    width: 52%;
+    border: 1px solid var(--brown);
     background-color: var(--green);
     height: 100%;
     min-height: 25px;

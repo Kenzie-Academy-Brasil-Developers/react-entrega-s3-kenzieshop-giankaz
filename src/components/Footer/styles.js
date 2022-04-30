@@ -5,6 +5,7 @@ width: 100%;
 background-color: var(--green);
 position: relative;
 min-height: 10vh;
+border-top: 1px solid var(--brown);
 
 ul {
     width: 100%;

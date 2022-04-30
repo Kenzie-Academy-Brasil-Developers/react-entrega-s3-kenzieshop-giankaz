@@ -38,7 +38,7 @@ export default function Product({setError}) {
                      </figure>
                      <div>
                      <h3>{name}</h3>
-                     <p>R$: {price},00 à vista</p>
+                     <p>R$: {price.toFixed(2).toString().replace('.', ',')} à vista</p>
                      <button onClick={() => handleAdd(value)}>Adicionar ao Carrinho<BsFillCartPlusFill/></button>
                      </div>
 

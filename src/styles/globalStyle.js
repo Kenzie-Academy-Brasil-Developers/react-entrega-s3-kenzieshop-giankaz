@@ -35,7 +35,7 @@ footer {
 
 * {
     scrollbar-width: auto;
-    scrollbar-color: var(--green) #ffffff;
+    scrollbar-color: var(--brown) #ffffff;
   }
 
  
@@ -44,11 +44,11 @@ footer {
   }
 
   *::-webkit-scrollbar-track {
-    background: var(--darkGreen);
+    background: white;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: var(--green);
+    background-color: var(--brown);
     border-radius: 10px;
     border: 0 solid #ffffff;
   }
