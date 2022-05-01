@@ -1,5 +1,5 @@
 import { useSnackbar } from "notistack";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { changeHeader, changeLogin } from "../../store/modules/Login/action";
@@ -15,6 +15,11 @@ export default function Login() {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
+	useEffect(() => {
+	  dispatch(changeHeader(false))
+	}, [])
+	
+
 	const handleLogin = () => {
 		if (values.name !== "" && values.pass !== "") {
 			window.localStorage.setItem("@PetStore/user", JSON.stringify(values));
@@ -25,7 +30,7 @@ export default function Login() {
 
 			});
 			setTimeout(() => {
-				dispatch(changeHeader(true));
+	
 				dispatch(changeLogin(true));
 				history.push("/");
 			}, 1500);

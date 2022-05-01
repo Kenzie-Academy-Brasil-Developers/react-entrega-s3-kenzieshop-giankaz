@@ -53,7 +53,6 @@ export default function Header() {
 			variant: "success",
 			autoHideDuration: 3000,
 		});
-		dispatch(changeHeader(true));
 		dispatch(changeLogin(false));
 	};
 
@@ -83,7 +82,6 @@ export default function Header() {
 			});
 			setTimeout(() => {
 				setOpen(false);
-				dispatch(changeHeader(false));
 				history.push("/login");
 			}, 2000);
 		}
@@ -95,7 +93,6 @@ export default function Header() {
 				alt="PetStore: Rações - Remédios - Serviços"
 				className="banner"
 				onClick={() => {
-					dispatch(changeHeader(true));
 					history.push("/");
 				}}
 			/>

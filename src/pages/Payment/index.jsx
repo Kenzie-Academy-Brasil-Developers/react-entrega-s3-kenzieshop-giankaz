@@ -43,7 +43,7 @@ export default function Payment() {
 			autoHideDuration: 2500,
 		});
 		setTimeout(() => {
-	   	dispatch(changeHeader(true))
+
 			enqueueSnackbar(`Pagamento Realizado! Obrigado!`, {
 				variant: "success",
 		     	autoHideDuration: 3000,
