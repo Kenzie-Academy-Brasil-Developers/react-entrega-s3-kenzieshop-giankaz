@@ -9,7 +9,7 @@ export const PaymentMain = styled.main`
     flex-flow: row wrap;
     justify-content: center;
     gap: 25px;
-    height: 82vh;
+
  
  img {
      width: 30%;

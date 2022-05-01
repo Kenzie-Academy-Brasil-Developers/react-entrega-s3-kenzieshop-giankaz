@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { changeHeader } from "../../store/modules/Login/action";
 import {
   changeProductThunk, clearProductThunk, delProductThunk
 } from "../../store/modules/Products/thunk";
@@ -16,6 +17,9 @@ export default function Payment() {
 	const handleRemove = (product) => {
 		dispatch(delProductThunk(product.id));
 	};
+	useEffect(() => {
+		dispatch(changeHeader(2))
+	}, [])
 
 	useEffect(() => {
 		if (products.length <= 0) {
@@ -39,6 +43,7 @@ export default function Payment() {
 			autoHideDuration: 2500,
 		});
 		setTimeout(() => {
+	   	dispatch(changeHeader(true))
 			enqueueSnackbar(`Pagamento Realizado! Obrigado!`, {
 				variant: "success",
 		     	autoHideDuration: 3000,

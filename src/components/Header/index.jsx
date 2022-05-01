@@ -200,11 +200,7 @@ export default function Header() {
 						<li onClick={() => handleFilter("remedios")}>Remédios</li>
 						<li onClick={() => handleFilter("brinquedos")}>Brinquedos</li>
 					</>
-				) : headerInfo === 1 ? (
-					<h1>Realize seu Cadastro</h1>
-				) : (
-					<h1>Realize seu Login para continuar</h1>
-				)}
+				) : headerInfo === 1 ? <h1>Realize seu Cadastro</h1> : (headerInfo === 2 ? <h1>Finalize sua compra</h1> : <h1>Realize seu Login para continuar</h1>)}
 			</ul>
 		</HeaderStyle>
 	);
