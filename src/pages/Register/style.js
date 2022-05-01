@@ -27,6 +27,7 @@ input {
     padding: 10px;
     border: 1px solid var(--brown);
     border-radius: 4px;
+    color: var(--green)
 }
 input:focus {
     outline: none;
