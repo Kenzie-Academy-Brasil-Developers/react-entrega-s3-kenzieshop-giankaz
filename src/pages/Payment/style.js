@@ -31,7 +31,7 @@ export const PaymentMain = styled.main`
      border-radius: 4px;
      border: 1px solid var(--brown);
      gap: 20px;
-     height: 172px;
+     height: 190px;
  }
 
  h3 {
@@ -57,7 +57,9 @@ export const PaymentMain = styled.main`
       align-items: center;
       text-align: center;
     }
-
+    .paymentOptions>span {
+        height: 40px;
+    }
     .total {
         width: 200px;
         max-height: 170px;
@@ -77,6 +79,10 @@ export const PaymentMain = styled.main`
         background-color: var(--green);
         border-radius: 4px;
         font-weight: bold;
+    }
+
+    .total>button:hover {
+        background-color: var(--darkGreen);
     }
 
     @media (max-width: 913px) {

@@ -21,6 +21,8 @@ export default function Login() {
 			dispatch(addUser(values));
 			enqueueSnackbar(`Login Realizado! Bem vindo ${values.name}`, {
 				variant: "success",
+			  autoHideDuration: 1500,
+
 			});
 			setTimeout(() => {
 				dispatch(changeHeader(true));

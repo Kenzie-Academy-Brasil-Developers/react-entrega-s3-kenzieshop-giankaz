@@ -21,12 +21,14 @@ export default function Register() {
 
 	const handleSubmit = () => {
 		if (values.name !== "" && values.email !== "" && values.pass !== "") {
-			enqueueSnackbar(`Cadastro Realizado! Bem vindo ${values.name}`, {
+			enqueueSnackbar(`Cadastro Realizado! Faça seu login para continuar.`, {
 				variant: "success",
+			    autoHideDuration: 3000,
+
 			});
 			setTimeout(() => history.push("/login"), 1500);
 		} else {
-			enqueueSnackbar(`Digite seu nome, email e senha porfavor.`, {
+			enqueueSnackbar(`Digite seu nome, email e senha por favor.`, {
 				variant: "error",
 			});
 		}

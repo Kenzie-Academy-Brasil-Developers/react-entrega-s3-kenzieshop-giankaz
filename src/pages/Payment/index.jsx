@@ -21,6 +21,8 @@ export default function Payment() {
 		if (products.length <= 0) {
 			enqueueSnackbar(`Carrinho vazio, redirecionando para home`, {
 				variant: "warning",
+			autoHideDuration: 3000,
+
 			});
 			setTimeout(() => {
 				history.push("/");
@@ -34,10 +36,13 @@ export default function Payment() {
 	const handleCompra = () => {
 		enqueueSnackbar(`Processando pagamento, aguarde!`, {
 			variant: "info",
+			autoHideDuration: 2500,
 		});
 		setTimeout(() => {
 			enqueueSnackbar(`Pagamento Realizado! Obrigado!`, {
 				variant: "success",
+		     	autoHideDuration: 3000,
+
 			});
 			history.push("/");
 			setTimeout(() => dispatch(clearProductThunk()), 400);

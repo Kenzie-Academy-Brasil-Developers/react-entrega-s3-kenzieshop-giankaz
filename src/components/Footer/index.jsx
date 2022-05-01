@@ -7,7 +7,8 @@ export default function Footer() {
 			<ul>
 				<li>
 					<h3>Sobre Nós: </h3>
-					<p>Somos a Pet Store, bem vindos!</p>
+					<p>Somos a Pet Store, a melhor loja para seu pet!</p>
+					<p>Bem vindos!</p>
 				</li>
 				<li>
 					<h3> Contatos:</h3>

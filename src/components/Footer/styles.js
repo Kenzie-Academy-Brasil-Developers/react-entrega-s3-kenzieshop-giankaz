@@ -12,9 +12,9 @@ ul {
     width: 100%;
     display: flex;
     margin: 0 auto;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    text-align: center;
+    text-align: start;
     height: 90%;;
 }
 

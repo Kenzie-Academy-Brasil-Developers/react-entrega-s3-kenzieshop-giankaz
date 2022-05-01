@@ -51,6 +51,7 @@ export default function Header() {
 		dispatch(addUser(1));
 		enqueueSnackbar(`Logout realizado! Até mais ${user.name}`, {
 			variant: "success",
+			autoHideDuration: 3000,
 		});
 		dispatch(changeHeader(true));
 		dispatch(changeLogin(false));
@@ -61,6 +62,7 @@ export default function Header() {
 			if (products.length > 0) {
 				enqueueSnackbar(`Redirecionando para pagamentos, aguarde.`, {
 					variant: "success",
+			       autoHideDuration: 2000,
 				});
 				setTimeout(() => {
 					setOpen(false);
@@ -69,11 +71,15 @@ export default function Header() {
 			} else {
 				enqueueSnackbar(`Adicione algum item para prosseguir!`, {
 					variant: "error",
+		        	autoHideDuration: 3000,
+
 				});
 			}
 		} else {
 			enqueueSnackbar(`Realize o Login para finalizar a compra!`, {
 				variant: "error",
+			   autoHideDuration: 2000,
+
 			});
 			setTimeout(() => {
 				setOpen(false);

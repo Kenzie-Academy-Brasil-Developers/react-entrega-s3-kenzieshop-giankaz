@@ -9,7 +9,10 @@ export default function Main() {
 
 	useEffect(() => {
 		if (error) {
-			enqueueSnackbar("Item já se encontra no carrinho", { variant: "error" });
+			enqueueSnackbar("Item já se encontra no carrinho", {
+				variant: "error",
+				autoHideDuration: 2000,
+			});
 			setError(false);
 		}
 	}, [error]);
