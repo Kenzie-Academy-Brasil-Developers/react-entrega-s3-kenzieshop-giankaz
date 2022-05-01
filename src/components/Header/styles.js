@@ -109,7 +109,7 @@ a:visited {
     position: absolute;
     bottom: -400px;
     left: -270px;
-    width: 300px;
+    width: 320px;
     height: 380px;
     background-color: var(--darkGreen);
     z-index: 3;
@@ -224,7 +224,7 @@ a:visited {
     position: absolute;
   
     top: -27px;
-    right: 0px;
+    right: 15px;
     width: 0;
     height: 0;
      border: 15px solid transparent;
