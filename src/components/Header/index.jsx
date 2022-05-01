@@ -1,34 +1,28 @@
+import { useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
-import banner from "../../images/banner.png";
-import { HeaderStyle } from "./styles.js";
 import { BsFillCartFill, BsFillCartXFill } from "react-icons/bs";
 import { CgLogIn, CgLogOut } from "react-icons/cg";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import banner from "../../images/banner.png";
+import { changeHeader, changeLogin } from "../../store/modules/Login/action";
 import {
 	changeProductThunk,
-	clearProductThunk,
 	delProductThunk,
 	filterProductThunk,
 } from "../../store/modules/Products/thunk";
-import {
-	addTotal,
-	delTotal,
-	setTotal,
-} from "../../store/modules/Total/actions";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { setTotal } from "../../store/modules/Total/actions";
 import { addUser } from "../../store/modules/User/action";
-import { useSnackbar } from "notistack";
-import { clearProduct } from "../../store/modules/Products/actions";
-import { changeHeader, changeLogin } from "../../store/modules/Login/action";
+import { HeaderStyle } from "./styles.js";
 
 export default function Header() {
 	const [open, setOpen] = useState(false);
 	const [itemsCart, setItemsCart] = useState(1);
 	const { enqueueSnackbar } = useSnackbar();
-	const { total, products, user, login, headerInfo } = useSelector((state) => state);
+	const { total, products, user, headerInfo } = useSelector(
+		(state) => state
+	);
 	const history = useHistory();
 	const dispatch = useDispatch();
 
@@ -58,8 +52,8 @@ export default function Header() {
 		enqueueSnackbar(`Logout realizado! Até mais ${user.name}`, {
 			variant: "success",
 		});
-        dispatch(changeHeader(true))
-		dispatch(changeLogin(false))
+		dispatch(changeHeader(true));
+		dispatch(changeLogin(false));
 	};
 
 	const handleCompra = () => {
@@ -69,10 +63,9 @@ export default function Header() {
 					variant: "success",
 				});
 				setTimeout(() => {
-					setOpen(false)
-					history.push('/payment')
-				},1500)
-				//dispatch(clearProductThunk());
+					setOpen(false);
+					history.push("/payment");
+				}, 1500);
 			} else {
 				enqueueSnackbar(`Adicione algum item para prosseguir!`, {
 					variant: "error",
@@ -83,10 +76,10 @@ export default function Header() {
 				variant: "error",
 			});
 			setTimeout(() => {
-				setOpen(false)
-                dispatch(changeHeader(false))
-                history.push("/login")
-            }, 2000);
+				setOpen(false);
+				dispatch(changeHeader(false));
+				history.push("/login");
+			}, 2000);
 		}
 	};
 	return (
@@ -96,7 +89,7 @@ export default function Header() {
 				alt="PetStore: Rações - Remédios - Serviços"
 				className="banner"
 				onClick={() => {
-					dispatch(changeHeader(true))
+					dispatch(changeHeader(true));
 					history.push("/");
 				}}
 			/>
@@ -137,7 +130,8 @@ export default function Header() {
 														<h3>{value.name}</h3>
 														<div>
 															<span>
-																Valor: {`R$${(value.price * value.un).toFixed(2)}`}
+																Valor:{" "}
+																{`R$${(value.price * value.un).toFixed(2)}`}
 															</span>
 															<div>
 																<p>Unidades: </p>
@@ -200,8 +194,10 @@ export default function Header() {
 						<li onClick={() => handleFilter("remedios")}>Remédios</li>
 						<li onClick={() => handleFilter("brinquedos")}>Brinquedos</li>
 					</>
+				) : headerInfo === 1 ? (
+					<h1>Realize seu Cadastro</h1>
 				) : (
-					(headerInfo === 1 ? <h1>Realize seu Cadastro</h1>  :  <h1>Realize seu Login para continuar</h1>)
+					<h1>Realize seu Login para continuar</h1>
 				)}
 			</ul>
 		</HeaderStyle>

@@ -6,19 +6,19 @@ export default function Footer() {
 		<FooterStyled>
 			<ul>
 				<li>
-         <h3>Sobre Nós: </h3> 
-         <p>Somos a Pet Store, bem vindos!</p>
-          </li>
+					<h3>Sobre Nós: </h3>
+					<p>Somos a Pet Store, bem vindos!</p>
+				</li>
 				<li>
-         <h3> Contatos:</h3>
-         <p>(54) 9 9999-9999</p>
-         <p>(54) 3232-3232</p>
-          </li>
+					<h3> Contatos:</h3>
+					<p>(54) 9 9999-9999</p>
+					<p>(54) 3232-3232</p>
+				</li>
 				<li>
-          <h3>Endereço:</h3>
-          <p>Rua: Marechel Teodoro, Nº 143, Centro</p>
-          <p>Vacaria - RS</p>
-          </li>
+					<h3>Endereço:</h3>
+					<p>Rua: Marechel Teodoro, Nº 143, Centro</p>
+					<p>Vacaria - RS</p>
+				</li>
 			</ul>
 		</FooterStyled>
 	);

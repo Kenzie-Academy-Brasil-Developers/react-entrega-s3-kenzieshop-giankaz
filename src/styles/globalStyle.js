@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,500;1,300;1,400&display=swap');
-
 html, body, .App {
     font-family: 'Rubik', sans-serif;
     background-color: var(--grey);

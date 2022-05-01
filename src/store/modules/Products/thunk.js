@@ -1,6 +1,6 @@
+import { dataBase } from "../../../database"
 import { addTotal, delTotal } from "../Total/actions"
 import { addProduct, changeProduct, clearProduct, delProduct, filterAll, filterBrinquedos, filterRacoes, filterRemedios, filterService } from "./actions"
-import { dataBase } from "../../../database"
 
 
 export const addProductThunk = (product) => (dispatch) => {
@@ -21,17 +21,17 @@ export const changeProductThunk = (item, quantity) => (dispatch, getStore) => {
 
     products.forEach((value) => {
         if (value.id !== item.id) {
-            newList.push({...value})
+            newList.push({ ...value })
         } else {
             if (item.un > quantity) {
                 dispatch(delTotal(item.price))
             } else {
                 dispatch(addTotal(item.price))
             }
-          newList.push({...value, un: Number(quantity)})
+            newList.push({ ...value, un: Number(quantity) })
         }
     })
-   
+
     dispatch(changeProduct(newList))
 }
 
@@ -52,8 +52,8 @@ export const filterProductThunk = (type) => (dispatch, getStore) => {
     } else if (type === 'all') {
         dispatch(filterAll(dataBase))
     }
-        
-    
+
+
 }
 
 export const clearProductThunk = () => (dispatch) => {

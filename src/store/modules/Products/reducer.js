@@ -1,5 +1,5 @@
 import { dataBase } from "../../../database"
-import { ADD_PRODUCT, CHANGE_PRODUCT, DEL_PRODUCT, FILTER_BRINQUEDOS, FILTER_RACOES, FILTER_REMEDIOS, FILTER_SERVICE, FILTER_ALL, CLEAR_PRODUCT } from "./actionType"
+import { ADD_PRODUCT, CHANGE_PRODUCT, CLEAR_PRODUCT, DEL_PRODUCT, FILTER_ALL, FILTER_BRINQUEDOS, FILTER_RACOES, FILTER_REMEDIOS, FILTER_SERVICE } from "./actionType"
 
 export const ProductReducer = (state = JSON.parse(window.localStorage.getItem('@PetStore/cart')) || [], action) => {
     switch (action.type) {
