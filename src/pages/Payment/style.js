@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const PaymentMain = styled.main`
     width: 100%;
     max-width: 980px;
-    margin: 120px auto;
+    margin: 140px auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -22,14 +22,16 @@ export const PaymentMain = styled.main`
      gap: 10px
  }
  li {
-     max-width: 680px;
+     width: 680px;
      display: flex;
      background-color: white;
-     justify-content: space-between;
+     justify-content: center;
      align-items: center;
      padding: 10px 20px;
      border-radius: 4px;
      border: 1px solid var(--brown);
+     gap: 20px;
+     height: 172px;
  }
 
  h3 {
@@ -53,6 +55,7 @@ export const PaymentMain = styled.main`
       flex-flow: column nowrap;
       gap: 25px;
       align-items: center;
+      text-align: center;
     }
 
     .total {
@@ -84,5 +87,37 @@ export const PaymentMain = styled.main`
         h3, span, .total {
       font-size:calc(12px + 1.5vw)
            }
+           li {
+               width: 600px;
+           }
+        }
+    
+
+    @media (max-width: 600px) {
+        ul {
+            align-items: center;
+        }
+        li {
+            flex-flow: column nowrap;
+            width: 200px;
+            position: relative;
+            padding: 5px;
+            text-align: center;
+            gap: 10px;
+            height: auto;
+        }
+        h3 {
+            width: 100%;
+        }
+        .trash {
+            position: absolute;
+            right: 1%;
+            top: 1%;
+        }
+        .paymentOptions {
+            width: 100%;
+            gap: 10px;
+        
+        }
     }
 `

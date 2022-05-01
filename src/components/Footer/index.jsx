@@ -7,7 +7,7 @@ export default function Footer() {
 			<ul>
 				<li>
          <h3>Sobre Nós: </h3> 
-         <p>Somos a Pet Store, a maior loja de produtos direcionados aos animais de Vacaria e região!</p>
+         <p>Somos a Pet Store, bem vindos!</p>
           </li>
 				<li>
          <h3> Contatos:</h3>

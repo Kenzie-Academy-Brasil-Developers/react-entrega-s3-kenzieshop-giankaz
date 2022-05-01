@@ -30,6 +30,7 @@ export default function Register() {
     } 
 	return (
 		<RegisterMain>
+            <h2>Cadastre<span>-se</span></h2>
 			<form onSubmit={(event) => {
                 event.preventDefault()
                 handleSubmit()

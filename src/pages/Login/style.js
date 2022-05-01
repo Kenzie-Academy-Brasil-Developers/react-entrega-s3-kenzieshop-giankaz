@@ -10,7 +10,7 @@ justify-content: center;
 align-items: center;
 max-width: 500px;
 padding: 10px;
-height: 87vh;
+height: 600px;
 form {
     width: 100%;
     display: flex;

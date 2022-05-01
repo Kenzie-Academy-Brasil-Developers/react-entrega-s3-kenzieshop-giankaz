@@ -50,8 +50,7 @@ export default function Payment() {
     <PaymentMain>
         <section>
            <ul>
-             {products.length > 0 ?
-             products.map((value) => {
+             {products.map((value) => {
                 return (
                     <li key={value.id}>
                       <img
@@ -82,9 +81,7 @@ export default function Payment() {
                       </button>
                     </li>
                     )})
-             :
-                <h1>Carrinho Vazio :(</h1>
-             }
+                          }
            </ul>
         </section>
       

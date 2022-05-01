@@ -9,13 +9,15 @@ color: var(--brown);
 position: fixed;
 top: 0;
 border-bottom: 1px solid var(--brown);
+z-index: 1;
+
 
 .banner {
     width: 20%;
     align-self: flex-start;
     min-width: 200px;
-    max-width: 400px;
     cursor: pointer;
+    max-width: 300px;
 
 }
 

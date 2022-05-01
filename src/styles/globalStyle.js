@@ -9,7 +9,12 @@ html, body, .App {
 
 
 }
-
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: space-between;
+}
 button {
     cursor: pointer;
     
@@ -52,15 +57,6 @@ footer {
     border-radius: 10px;
     border: 0 solid #ffffff;
   }
-
-
-
-
-
-
-
-
-
 
 
 

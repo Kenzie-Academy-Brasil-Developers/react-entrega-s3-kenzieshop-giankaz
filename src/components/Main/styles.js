@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const MainStyle = styled.main`
 width: 80%;
-margin: 120px auto;
+margin: 100px auto;
 
 
 ul {
@@ -10,9 +10,11 @@ ul {
     flex-flow: row wrap;
     width: 100%;
     gap: 10px;
+    height: 100%;
     justify-content: center;
    align-items: center;
-   color: var(--brown)
+   color: var(--brown);
+
    
 }
 
@@ -101,8 +103,40 @@ button:hover {
 @media (max-width: 900px) {
     &{
         width: 100%;
-      
+       
+        margin: min(20vh, 400px) 0 0 0;   
+ 
+
     }
+    ul {
+    
+       
+      
+        padding: 15px;
+    }
+    li {
+     
+    }
+
+    & {
+    scrollbar-width: auto;
+    scrollbar-color: var(--green) #ffffff;
+  }
+
+ 
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--green);
+    border-radius: 10px;
+    border: 0 solid #ffffff;
+  }
 
 }
 

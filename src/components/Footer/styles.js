@@ -3,11 +3,10 @@ import styled from 'styled-components'
 export const FooterStyled = styled.footer`
 width: 100%;
 background-color: var(--green);
-position: fixed;
-min-height: 10vh;
+position: relative;
 border-top: 1px solid var(--brown);
-bottom: 0;
-z-index: -1;
+font-size: 10px;
+padding: 5px;
 
 ul {
     width: 100%;
@@ -16,6 +15,7 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 90%;;
 }
 
 li{
@@ -23,10 +23,6 @@ li{
 }
 h3 {
     font-weight: bold;
-}
-
-@media (max-width: 720px) {
-
 }
 
 `
