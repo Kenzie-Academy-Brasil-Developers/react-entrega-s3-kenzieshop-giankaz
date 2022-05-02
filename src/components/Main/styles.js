@@ -68,6 +68,7 @@ ul>li>figure>img {
     max-width: 200px;
 }
 ul>li>div {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -81,6 +82,7 @@ ul>li>div>h3 {
 }
 
 ul>li>div>button {
+    width: 100%;
     border: none;
     background-color: var(--darkGreen);
     min-height: 25px;
