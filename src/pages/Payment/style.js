@@ -4,11 +4,13 @@ import styled from 'styled-components'
 export const PaymentMain = styled.main`
     width: 100%;
     max-width: 980px;
-    margin: 140px auto;
+    margin: 50px auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 25px;
+   
+    
 
  
  img {
@@ -87,14 +89,15 @@ export const PaymentMain = styled.main`
 
     @media (max-width: 913px) {
         .total {
-            order: -1;
             text-align: center;
+            order: -1;
         }
         h3, span, .total {
       font-size:calc(12px + 1.5vw)
            }
            li {
                width: 600px;
+          
            }
         }
     

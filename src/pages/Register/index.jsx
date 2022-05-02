@@ -2,6 +2,7 @@ import { useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Api from "../../Api";
 import { changeHeader } from "../../store/modules/Login/action";
 import { RegisterMain } from "./style";
 
@@ -21,18 +22,33 @@ export default function Register() {
 
 	const handleSubmit = () => {
 		if (values.name !== "" && values.email !== "" && values.pass !== "") {
-			enqueueSnackbar(`Cadastro Realizado! Faça seu login para continuar.`, {
-				variant: "success",
-			    autoHideDuration: 3000,
+			Api.post('/users', {
+				email: values.email,
+				password: values.pass,
+				name: values.name,
+			})
+			.then((res) => {
+				console.log(res.data)
+				enqueueSnackbar(`Cadastro Realizado! Faça seu login para continuar.`, {
+					variant: "success",
+					autoHideDuration: 3000,
+	
+				});
+				setTimeout(() => history.push("/login"), 1500);
+			}) 
+			.catch((err) => {
+				enqueueSnackbar(`${err.response.data}`, {
+					variant: "error",
+			})
+			})
 
-			});
-			setTimeout(() => history.push("/login"), 1500);
 		} else {
 			enqueueSnackbar(`Digite seu nome, email e senha por favor.`, {
 				variant: "error",
-			});
-		}
+		});
+	    }
 	};
+	
 	return (
 		<RegisterMain>
 			<h2>

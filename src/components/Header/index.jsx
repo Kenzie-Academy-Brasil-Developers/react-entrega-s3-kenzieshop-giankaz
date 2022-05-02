@@ -48,6 +48,7 @@ export default function Header() {
 
 	const handleLogout = () => {
 		window.localStorage.removeItem("@PetStore/user");
+		window.localStorage.removeItem("@PetStore/auth");
 		dispatch(addUser(1));
 		enqueueSnackbar(`Logout realizado! Até mais ${user.name}`, {
 			variant: "success",
@@ -87,7 +88,7 @@ export default function Header() {
 		}
 	};
 	return (
-		<HeaderStyle>
+		<HeaderStyle headerInfo={headerInfo}>
 			<img
 				src={banner}
 				alt="PetStore: Rações - Remédios - Serviços"

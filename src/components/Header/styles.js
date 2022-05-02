@@ -6,7 +6,7 @@ display: flex;
 justify-content: space-around;
 background-color: var(--green);
 color: var(--brown);
-position: fixed;
+position: ${(props) =>props.headerInfo === true ? 'fixed' : 'relative'};
 top: 0;
 border-bottom: 1px solid var(--brown);
 z-index: 1;

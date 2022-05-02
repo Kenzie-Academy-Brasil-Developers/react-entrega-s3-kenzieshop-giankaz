@@ -7,6 +7,7 @@ position: relative;
 border-top: 1px solid var(--brown);
 font-size: 10px;
 padding: 5px;
+bottom: 0;
 
 ul {
     width: 100%;

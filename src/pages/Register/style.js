@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const RegisterMain = styled.main`
 width: 100%;
 max-width: 500px;
-margin: 120px auto;
+margin: 0 auto;
 height: 600px;
 display: flex;
 flex-flow: column nowrap;

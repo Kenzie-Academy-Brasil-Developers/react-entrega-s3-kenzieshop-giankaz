@@ -13,6 +13,7 @@ html, body, .App {
   height: 100vh;
   justify-content: space-between;
 }
+
 button {
     cursor: pointer;
     
