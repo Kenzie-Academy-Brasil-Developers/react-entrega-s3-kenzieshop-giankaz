@@ -11,7 +11,8 @@ export default function Login() {
 	const [values, setValue] = useState({
 		email: "",
 		pass: "",
-	});
+		name: ""
+		});
 	const { enqueueSnackbar } = useSnackbar();
 	const history = useHistory();
 	const dispatch = useDispatch();
@@ -29,9 +30,8 @@ export default function Login() {
 			})
 			.then((res) => {
 				const {data} = res
-				window.localStorage.setItem("@PetStore/user", JSON.stringify(values))
+				window.localStorage.setItem("@PetStore/user", JSON.stringify({...values, name: `${data.user.name}`}))
 				window.localStorage.setItem("@PetStore/auth", JSON.stringify(data.accessToken))
-				values.name = data.user.name
 				dispatch(addUser(values))
 				enqueueSnackbar(`Login Realizado! Bem vindo ${data.user.name}`, {
 					variant: "success",

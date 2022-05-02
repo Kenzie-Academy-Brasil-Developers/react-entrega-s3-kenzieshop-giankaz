@@ -47,13 +47,13 @@ export default function Header() {
 	};
 
 	const handleLogout = () => {
-		window.localStorage.removeItem("@PetStore/user");
-		window.localStorage.removeItem("@PetStore/auth");
-		dispatch(addUser(1));
 		enqueueSnackbar(`Logout realizado! Até mais ${user.name}`, {
 			variant: "success",
 			autoHideDuration: 3000,
 		});
+		window.localStorage.removeItem("@PetStore/user");
+		window.localStorage.removeItem("@PetStore/auth");
+		dispatch(addUser(1));
 		dispatch(changeLogin(false));
 	};
 
